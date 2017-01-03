@@ -2,7 +2,7 @@
 <widget id="de.teemachen.teeuhr" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>TeeUhr</name>
     <description>
-        A basic Framework7 template for PhoneGap.
+        Die ultimative Teeuhr um jede Teesorte optimal zuzubereiten. 
     </description>
     <author email="support@teemachen.de" href="http://www.teemachen.de">TeeMachen Team</author>
 
