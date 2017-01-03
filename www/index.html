@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Your app title -->
+    <title>My App</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <h3>Menü</h3>
+			
+			
+			<div class="list-block">
+				<ul>
+             <li id="settings">
+                 <div class="item-content">
+                     <div class="item-media"> <i class="icon fa fa-cog"></i></div>
+                     <div class="item-inner">
+                         <div class="item-title label"><a href="#index">Start</a></div>
+                     </div>
+                 </div>
+             </li>
+             <li id="favorites" >
+                 <div class="item-content">
+                     <div class="item-media"><i class="icon fa fa-star"></i></div>
+                     <div class="item-inner">
+                         <div class="item-title label"><a href="#index2">Teeuhr</a></div>
+                     </div>
+                 </div>
+             </li>
+             <li id="about">
+                 <div class="item-content">
+                     <div class="item-media"><i class="icon fa fa-info-circle"></i></div>
+                     <div class="item-inner">
+                         <div class="item-title label"><a href="about.html">About</a></div>
+                     </div>
+                 </div>
+             </li>
+			 <li id="blog">
+                 <div class="item-content">
+                     <div class="item-media"><i class="icon fa fa-home"></i></div>
+                     <div class="item-inner">
+                         <div class="item-title label"><a href='http://www.teemachen.de' class="external">Blog</a></div>
+                     </div>
+                 </div>
+             </li>
+         </ul>
+			</div>
+			
+        </div>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding"><i class="icon fa fa-clock-o"></i>&nbsp;&nbsp;TeeUhr von TeeMachen.de</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content">
+                        <div class="content-block">
+                            
+							<div class="row no-gutter">
+								<div  class="col-25">
+									<img style="display:block; margin: auto; width:40%"  src="./img/tee.png" />
+								</div>
+								<div class="col-75">
+									Für den optimalen Teegenuß ist bei der Zubereitung die Einhaltung der Ziehzeit wichtig. Die Teeuhr hilft dir die optimale Ziehzeit deines Tees zu bestimmen und einzuhalten.
+								</div>
+									
+							</div>
+							<div class="list-block inset" >
+							<ul>
+
+							  <li><p style="text-align:center"><i class="icon fa fa-star"></i> Wähle die gewünschte Teesorte aus und es wird die optimale Ziehzeit ausgewählt</p></li>
+							  <li>
+										  <a href="#" class="item-link smart-select" id="teesortes">
+											 <select id="teesorte" name="teesorte">
+												
+											 </select>
+											 <div class="item-content">
+												<div class="item-inner">
+												   <div class="item-title"><i class="icon fa fa-list "></i>&nbsp;&nbsp;Teesorte</div>
+												</div>
+											 </div>
+										  </a>
+							   </li>
+
+							  <li><p  style="text-align:center">oder wähle eine individuelle Zeitdauer.</p></li>
+							  
+							  <li>
+								<div class="item-content" >
+								  <div class="item-media"><i class="icon fa fa-clock-o fa-lg"></i></div>
+								  <div class="item-inner">
+									<div class="item-title label">Minuten</div>
+									<div class="item-input">
+									  <div class="range-slider">
+										<input id="zeit" type="range" min="1" max="15" value="8" step="1">
+									  </div>
+									</div>
+								  </div>
+								</div>
+							  </li>
+							</ul>
+						  </div>
+						  <div class="content-block" >
+							<h2 id="temperatur" style="text-align: center;"></h2>
+							  <h2 id="ziehzeit" style="text-align: center;">Ziehzeit 7 Minuten</h2>
+							  <p><a id="bstart" href="#" class="button button-big button-fill button-raised button-round  color-green">Start timer!</a>
+							  <a style="display:none" id="bstop" href="#" class="button button-big button-fill button-raised button-round  color-green">Stop timer!</a></p> 
+						 </div>	  
+						 <div class="content-block" >
+							<div style="text-align:center; font-size:22px; color:#f00;" id="countdown"></div>
+							</div>
+							
+						
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <div class="toolbar">
+                <div class="toolbar-inner">
+                    <!-- Toolbar links -->
+                    <a href="about.html" class="link">About</a>
+                    <a href='http://www.teemachen.de' class="link external">Blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+</body>
+
+</html>
