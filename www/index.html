@@ -55,7 +55,7 @@
                  <div class="item-content">
                      <div class="item-media"> <i class="icon fa fa-cog"></i></div>
                      <div class="item-inner">
-                         <div class="item-title label"><a href="#index">Start</a></div>
+                         <div class="item-title label"><a href="#">Start</a></div>
                      </div>
                  </div>
              </li>
@@ -94,25 +94,33 @@
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Top Navbar-->
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding"><i class="icon fa fa-clock-o"></i>&nbsp;&nbsp;TeeUhr von TeeMachen.de</div>
-                    <div class="right">
-                        <!--
-                          Right link contains only icon - additional "icon-only" class
-                          Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
-                </div>
-            </div>
+  
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
-            <div class="pages navbar-through toolbar-through">
+            <div class="pages ">
+			
+			 <div class="navbar">
+									<div class="navbar-inner">
+								<!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+										<div class="center ">TeeUhr</div>
+										<div class="right">
+									<!--
+									  Right link contains only icon - additional "icon-only" class
+									  Additional "open-panel" class tells app to open panel when we click on this link
+									-->
+										<a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+										</div>
+									</div>
+								</div>
+			
+			
                 <!-- Page, "data-page" contains page name -->
-                <div data-page="index" class="page">
+                <div data-page="index" class="page navbar-fixed toolbar-fixed">
                     <!-- Scrollable page content -->
-                    <div class="page-content">
+                    
+								
+					
+					
+					<div class="page-content" style="padding-top: 40px;">
                         <div class="content-block">
                             
 							<div class="row no-gutter">
@@ -177,12 +185,21 @@
             <div class="toolbar">
                 <div class="toolbar-inner">
                     <!-- Toolbar links -->
-                    <a href="about.html" class="link">About</a>
+                    <a href="index.htl" class="link">Home</a>
                     <a href='http://www.teemachen.de' class="link external">Blog</a>
                 </div>
             </div>
         </div>
-    </div>
+    
+		<div class="view" id="about">
+		
+			<div class="content-block">
+                <p>Here is About page!</p>
+                <p>Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.</p>
+            </div>
+		
+		</div> 
+	</div>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
